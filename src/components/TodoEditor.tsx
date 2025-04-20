@@ -10,6 +10,11 @@ const TodoEditor = ({ onCreate }: TodoCreate) => {
     setContent(e.target.value)
   }
 
+  const onKeyEnter =(e:React.KeyboardEvent<HTMLInputElement>)=>{
+    if(e.key==='Enter'){
+      handleSubmit()
+    }
+  }
 
 
   const handleSubmit = () => {
@@ -20,7 +25,9 @@ const TodoEditor = ({ onCreate }: TodoCreate) => {
   }
   return (
     <div className="Editor">
-      <input placeholder="새로운 Todo..."  value={content} onChange={onChange}/>
+      <input
+      onKeyUp={onKeyEnter}
+      placeholder="새로운 Todo..." value={content} onChange={onChange} />
       <button onClick={handleSubmit}>추가</button>
     </div>
   )

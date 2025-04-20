@@ -1,16 +1,16 @@
 import './App.css';
-import { useState, useRef ,useEffect} from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Header from './components/Header';
 import TodoList from './components/TodoList';
 import TodoEditor from './components/TodoEditor';
 export interface Todo {
   id: number,
-  isDone:boolean,
+  isDone: boolean,
   content: string,
-  date:string
+  date: string
 
 }
-const mockData:Todo[] = [
+const mockData: Todo[] = [
   {
     id: 0,
     isDone: false,
@@ -37,45 +37,45 @@ function App() {
   const [todos, setTodos] = useState<Todo[]>(mockData)
 
 
-const onCreate=(content:string)=>{
-  const newItem :Todo={
-    id:idRef.current++,
-    content,
-    isDone:false,
-    date:new Date().toISOString()
+  const onCreate = (content: string) => {
+    const newItem: Todo = {
+      id: idRef.current++,
+      content,
+      isDone: false,
+      date: new Date().toISOString()
+    }
+    setTodos([newItem, ...todos])
   }
-  setTodos([newItem,...todos])
-}
-const onUpdate=(targetId:number)=>{
-  setTodos(
-    todos.map((todo)=>
-      todo.id ===targetId? {...todo, isDone:!todo.isDone}:todo
+  const onUpdate = (targetId: number) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === targetId ? { ...todo, isDone: !todo.isDone } : todo
+      )
     )
-  )
-}
-const onDelete =(targetId:number)=>{
-  setTodos(todos.filter((todo)=>todo.id!==targetId))
-}
+  }
+  const onDelete = (targetId: number) => {
+    setTodos(todos.filter((todo) => todo.id !== targetId))
+  }
 
 
 
 
 
-  useEffect(()=>{
+  useEffect(() => {
 
-  },[todos])
+  }, [todos])
 
 
   return (
 
     <div className="App">
-      <Header/>
-      <TodoEditor onCreate={onCreate}/>
-      <TodoList  
-      todos={todos}
-      onUpdate={onUpdate}
-      onDelete={onDelete}
-      />    
+      <Header />
+      <TodoEditor onCreate={onCreate} />
+      <TodoList
+        todos={todos}
+        onUpdate={onUpdate}
+        onDelete={onDelete}
+      />
     </div>
   );
 }
