@@ -27,3 +27,8 @@
   border-radius: 5px;
   padding: 5px;
 }
+.TodoItem.check .content{
+  text-decoration: line-through;
+  color: #ccc;
+
+}
