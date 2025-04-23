@@ -2,7 +2,7 @@
   "name": "typescript-todo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/joonsol/typescript-todolist",
+  "homepage": "https://joonsol.github.io/typescript-todolist/",
 
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
