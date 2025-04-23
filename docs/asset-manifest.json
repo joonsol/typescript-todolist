@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/joonsol/typescript-todolist/static/css/main.df0c0f57.css",
+    "main.js": "/joonsol/typescript-todolist/static/js/main.9227a838.js",
+    "index.html": "/joonsol/typescript-todolist/index.html",
+    "main.df0c0f57.css.map": "/joonsol/typescript-todolist/static/css/main.df0c0f57.css.map",
+    "main.9227a838.js.map": "/joonsol/typescript-todolist/static/js/main.9227a838.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.df0c0f57.css",
+    "static/js/main.9227a838.js"
+  ]
+}
